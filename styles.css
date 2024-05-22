@@ -50,3 +50,7 @@ a {
 .article-p {
     text-align: justify;
 }
+
+.back {
+    text-decoration: underline;
+}
