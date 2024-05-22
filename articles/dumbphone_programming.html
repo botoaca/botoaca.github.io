@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pihnea: articles/dumphone_programming</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        pre {
+                text-align: left;
+                color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>/articles/dumbphone_programming</h1>
+        <br>
+        <p>
+            some time ago, a friend of mine traded his smartphone for a<br>
+            dumphone, which made me think about how programmers made<br>
+            applications back then. With Java <i><s>unfortunately :(</s></i>! but not the same<br>
+            Java we're all familiar with, rather a special version of Java made for<br>
+            mobile devices: <a href="https://en.wikipedia.org/wiki/Java_Platform,_Micro_Edition">Java ME (Micro Edition)</a>.
+        </p>
+        <br />
+        <p>
+            fortunately, <a href="https://www.sjsu.edu/cs/">San José State University</a> has a series of articles  <br />
+            on this subject, so I decided to try myself.                                              <br />
+        </p>
+        <br />
+        <p>links to the resources used:</p>
+        <ul>
+            <li><a class="gold-italic" href="https://www.cs.sjsu.edu/faculty/pearce/j2me/">Java 2 Micro Edition (J2ME) by Jon Pearce</a></li>
+            <li><a href="https://www.oracle.com/java/technologies/java-archive-javase5-downloads.html">Java SE Development Kit 5.0u22 (32-bit)</a></li>
+            <li><a href="https://www.oracle.com/java/technologies/java-archive-downloads-javame-downloads.html#sun_java_wireless_toolkit-2.5.2_01b-oth-JPR">Sun Java Wireless Toolkit 2.5.2_01</a></a></li>
+        </ul>
+        <br />
+        <p>
+            as the articles from SJSU teach, I installed JDK 5.0u22 (32-bit) and WTK 2.5.2,<br>
+            then I created a new project through the Toolkit's interface called "Example",<br>
+            with a midlet defined in the "HelloWorld" class. I opened the project folder in<br>
+            Visual Studio Code and wrote the code snippet from the article:
+        </p>
+        <br>
+        <pre>
+import javax.microedition.lcdui.*;
+import javax.microedition.midlet.*;
+
+public class HelloWorld extends MIDlet {
+    private Display theDisplay;
+    private Screen mainScreen;
+
+    public HelloWorld() {
+        theDisplay = Display.getDisplay(this);
+        mainScreen = new TextBox(
+            "Example 1", "Hello World", 50, TextField.ANY
+        );
+    }
+
+    protected void startApp() {
+        theDisplay.setCurrent(mainScreen);
+    }
+
+    protected void destroyApp(boolean unconditional) { }
+
+    protected void pauseApp() { }
+}
+        </pre>
+        <p>
+            i pressed <code>Build</code> and <code>Run</code> in WTK to open the emulator and launch the midlet:
+        </p>
+        <img src="../assets/dumbphone_programming/dumbphone.png" />
+        <br>
+        <p>↙ <a class="back" style="font-size: 1.25em;" href="../index.html">back</a></p>
+    </div>
+</body>
+</html>
