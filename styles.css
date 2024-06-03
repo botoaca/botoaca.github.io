@@ -54,3 +54,10 @@ a {
 .back {
     text-decoration: underline;
 }
+
+.article-link-date {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
